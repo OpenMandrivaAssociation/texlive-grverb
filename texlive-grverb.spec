@@ -1,3 +1,9 @@
+# revision 17368
+# category Package
+# catalog-ctan /language/greek/grverb
+# catalog-date 2010-03-06 16:54:30 +0100
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-grverb
 Version:	1.0
 Release:	1
@@ -54,6 +60,7 @@ format), metrics and a font map entry for its use are provided.
 %doc %{_texmfdistdir}/source/latex/grverb/grcour7t.vpl
 %doc %{_texmfdistdir}/source/latex/grverb/grverb.dtx
 %doc %{_texmfdistdir}/source/latex/grverb/grverb.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -64,3 +71,5 @@ format), metrics and a font map entry for its use are provided.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
