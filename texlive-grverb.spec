@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 The package provides verbatim typsetting, in the context of the
@@ -28,20 +25,12 @@ Greek option in babel. The package uses the public domain
 Greek-CourierPlain font, and the font itself (in Type 1
 format), metrics and a font map entry for its use are provided.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -61,7 +50,6 @@ format), metrics and a font map entry for its use are provided.
 %doc %{_texmfdistdir}/source/latex/grverb/grcour7t.vpl
 %doc %{_texmfdistdir}/source/latex/grverb/grverb.dtx
 %doc %{_texmfdistdir}/source/latex/grverb/grverb.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -72,5 +60,3 @@ format), metrics and a font map entry for its use are provided.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
