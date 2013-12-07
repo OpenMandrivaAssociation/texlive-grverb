@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-grverb
 Version:	1.0
-Release:	3
+Release:	4
 Summary:	Typesetting Greek verbatim
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/greek/grverb
