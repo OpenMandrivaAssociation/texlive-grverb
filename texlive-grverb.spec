@@ -9,7 +9,7 @@ Version:	1.0
 Release:	13
 Summary:	Typesetting Greek verbatim
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/greek/grverb
+URL:		https://www.ctan.org/tex-archive/language/greek/grverb
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grverb.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grverb.doc.tar.xz
